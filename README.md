@@ -40,6 +40,11 @@ uv run ingest_data.py
 ### 4. Transformations (dbt)
 ```bash
 cd dbt_edu
+# Copy the example profile to your local dbt config
+mkdir -p ~/.dbt
+cp profiles.yml.example ~/.dbt/profiles.yml 
+# (Note: Edit ~/.dbt/profiles.yml to add your Project ID)
+
 uv run dbt deps
 uv run dbt run
 ```

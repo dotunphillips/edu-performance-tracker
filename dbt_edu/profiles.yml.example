@@ -1,0 +1,13 @@
+# Save this file as ~/.dbt/profiles.yml
+dbt_edu:
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth  # or service-account
+      project: YOUR_GCP_PROJECT_ID
+      dataset: production
+      threads: 4
+      timeout_seconds: 300
+      location: us-central1
+      priority: interactive
+  target: dev

@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -6,7 +7,8 @@ from google.cloud import bigquery
 st.set_page_config(page_title="Global Education Dashboard", layout="wide")
 st.title("🎓 Education Performance Tracker")
 
-client = bigquery.Client(project="tactile-anthem-485519-v6")
+project_id = os.getenv("GCP_PROJECT_ID", "tactile-anthem-485519-v6")
+client = bigquery.Client(project=project_id)
 
 @st.cache_data
 def load_data():

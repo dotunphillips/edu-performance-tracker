@@ -4,8 +4,8 @@ from google.cloud import bigquery
 from google.cloud import storage
 
 # --- CONFIGURATION ---
-PROJECT_ID = "tactile-anthem-485519-v6"
-BUCKET_NAME = "edu-analytics-lake-dp"
+PROJECT_ID = os.getenv("GCP_PROJECT_ID", "tactile-anthem-485519-v6")
+BUCKET_NAME = os.getenv("GCP_GCS_BUCKET", "edu-analytics-lake-dp")
 SOURCE_TABLE = "bigquery-public-data.world_bank_intl_education.international_education"
 
 def extract_and_upload():
