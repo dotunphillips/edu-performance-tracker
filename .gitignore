@@ -2,6 +2,10 @@
 __pycache__/
 *.py[codz]
 *$py.class
+.venv/
+env/
+venv/
+.env
 
 # C extensions
 *.so
@@ -81,6 +85,16 @@ target/
 # IPython
 profile_default/
 ipython_config.py
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
@@ -205,3 +219,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project Specific
+.DS_Store
+education_data.parquet

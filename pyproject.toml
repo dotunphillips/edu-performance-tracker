@@ -1,0 +1,17 @@
+[project]
+name = "edu-performance-tracker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "db-dtypes>=1.4.4",
+    "dbt-bigquery==1.8.2",
+    "google-cloud-bigquery>=3.0.0,<4.0.0",
+    "google-cloud-bigquery-storage>=2.37.0",
+    "google-cloud-storage>=2.0.0,<3.0.0",
+    "pandas>=3.0.2",
+    "plotly>=6.7.0",
+    "pyarrow>=23.0.1",
+    "streamlit>=1.56.0",
+]

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: tactile-anthem-485519-v6
+    schema: education_data_all
+    tables:
+      - name: fact_education
