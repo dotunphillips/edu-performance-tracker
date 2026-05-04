@@ -1,7 +1,11 @@
 # Global Education Performance Tracker 🎓
 
 ## 📝 Problem Statement
-Policymakers and global development organizations often struggle to answer a fundamental question: **"Are financial investments in education actually translating into higher literacy outcomes?"** Publicly available datasets from the World Bank contain the answers but are stored in "long-format" structures that are difficult for standard BI tools to visualize efficiently. This project builds a cloud-native ELT pipeline to centralize, transform, and visualize these indicators, allowing for a direct comparison between government expenditure and literacy rates across decades.
+Policymakers and global development organizations often struggle to answer a fundamental question: **"Are financial investments in education actually translating into higher literacy outcomes?"**
+
+While the World Bank provides vast datasets, the "long-format" structure makes it difficult to perform year-over-year comparative analysis across different nations without significant manual restructuring. **This is a critical barrier to evidence-based policy.** Without a centralized, transformed view, it is nearly impossible to identify which fiscal strategies are working.
+
+This project builds a cloud-native ELT pipeline to automate the extraction and transformation of these indicators. By creating a unified "wide" dataset, we allow stakeholders to visualize the direct correlation between government expenditure and literacy rates. This transition from raw, siloed data to an interactive analytical tool enables NGOs and governments to identify successful funding models and reallocate resources where they are most needed to improve global education standards.
 
 ## 🏗️ Architecture
 The project follows a modern Data Engineering lifecycle:
@@ -9,8 +13,10 @@ The project follows a modern Data Engineering lifecycle:
 * **Ingestion:** Python (Batch) extracting World Bank data to Parquet files and uploading to GCS.
 * **Data Warehouse:** Google BigQuery, utilizing **Partitioning** (by Year) and **Clustering** (by Country Code).
 * **Transformation:** **dbt** to pivot raw indicators into an analytical-ready "wide" format.
+![dbt Lineage Graph](images/lineage.png)
 * **Orchestration:** Scripted workflow utilizing the `uv` package manager.
 * **Visualization:** Streamlit dashboard with interactive Plotly components.
+![Streamlit Dashboard](images/dashboard.png)
 
 ---
 

@@ -1,0 +1,9 @@
+dbt_edu:
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: tactile-anthem-485519-v6
+      dataset: education_data_all
+      threads: 4
+  target: dev
